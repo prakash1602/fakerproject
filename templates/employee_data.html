@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Data</title>
+</head>
+<body>
+    {% if employees %}
+<table class="table table=boarder align-right text-center">
+
+
+<tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Salary</th>
+    <th>Job</th>
+    <th>Location</th>
+</tr>
+
+
+{% for i in employees %}
+    <tr>
+    <td>{{ i.id }}</td>
+    <td>{{ i.first_name}}</td>
+    <td>{{ i.last_name }}</td>
+        <td>{{ i.email }}</td>
+    <td>{{ i.salary }}</td>
+    <td>{{ i.job }}</td>
+    <td>{{ i.location}}</td>
+    </tr>
+{% endfor %}
+
+
+</table>
+        {% else %}
+        <h1>Employee Data not Found</h1>
+    {% endif %}
+
+
+</body>
+</html>
